@@ -8,11 +8,9 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.elililly.codingchallage.DataStoreManager
 import com.elililly.codingchallage.fromJson
 import com.elililly.codingchallage.getJsonDataFromAsset
 import com.elililly.codingchallage.models.OrderSubmit
-import com.elililly.codingchallage.models.Price
 import com.elililly.codingchallage.models.Product
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
@@ -62,7 +63,7 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
         successDialog.setDialogListener(this)
 
         binding.orderSummaryBtn.setOnClickListener {
-
+            binding.root.hideSoftInput()
             if (binding.name.text!!.isBlank()) {
                 binding.name.error = getString(R.string.errorName)
             } else if (binding.address.text!!.isBlank()) {

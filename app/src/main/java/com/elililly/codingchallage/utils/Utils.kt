@@ -2,6 +2,8 @@ package com.elililly.codingchallage
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.gson.Gson
@@ -34,3 +36,7 @@ inline fun <reified T : Any> String.fromJson(): T = Gson().fromJson(this,T::clas
 //To generate random order Id
 fun IntRange.random() = (Math.random() * ((endInclusive + 1) - start) + start).toInt()
 
+fun View.hideSoftInput() {
+    val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
+}

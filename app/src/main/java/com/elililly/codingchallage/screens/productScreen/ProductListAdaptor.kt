@@ -32,6 +32,7 @@ internal class ProductListAdaptor(private var productList: List<Product>) :
 
         holder.productImage.setImageDrawable(image)
         holder.productPrice.text = product.price.value.toString()
+        holder.discountPrice.text = product.price.discount.toString()
         holder.quantity.text = "0"
 
         holder.plusProduct.setOnClickListener {
@@ -55,6 +56,7 @@ internal class ProductListAdaptor(private var productList: List<Product>) :
         var productImage: ImageView = view.findViewById(R.id.productImage)
         var productName: TextView = view.findViewById(R.id.productName)
         var productPrice: TextView = view.findViewById(R.id.productPrice)
+        var discountPrice: TextView = view.findViewById(R.id.discountPrice)
         var plusProduct: ImageView = view.findViewById(R.id.plus)
         var quantity: TextView = view.findViewById(R.id.quantity)
         var minusproduct: ImageView = view.findViewById(R.id.minus)

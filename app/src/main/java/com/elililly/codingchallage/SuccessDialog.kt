@@ -6,7 +6,7 @@ import android.content.DialogInterface
 
 class SuccessDialog(context: Context) : AlertDialog.Builder(context) {
     private var dialogListener: DialogListner? = null
-    fun show(name: String, paymentMethod: String, orderId: String) {
+    fun show(name: String, orderId: String, paymentMethod: String) {
         val dialogBuilder = AlertDialog.Builder(context)
         val formattedString =
             String.format(context.getString(R.string.successOrderMsg), name, orderId, paymentMethod)
