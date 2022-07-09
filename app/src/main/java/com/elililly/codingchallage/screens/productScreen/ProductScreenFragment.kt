@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,7 @@ import com.elililly.codingchallage.screens.BaseFragment
 import com.elililly.codingchallage.screens.orderSummaryScreen.OrderSummaryScreenFragment
 import com.elililly.codingchallage.utils.Constants
 import com.elililly.codingchallage.viewmodels.ProductScreenViewModel
+import com.google.android.material.snackbar.Snackbar
 import java.io.Serializable
 
 class ProductScreenFragment : BaseFragment() {
@@ -55,15 +58,22 @@ class ProductScreenFragment : BaseFragment() {
 
         binding.orderSummaryBtn.setOnClickListener {
             val productsToBeOrder = productListAdaptor.getToBeOrderedProducts()
-            val orderSummaryScreenFragment = OrderSummaryScreenFragment()
-            val bundle = Bundle()
-            bundle.putSerializable(Constants.ORDER_SUMMARY_KEY, productsToBeOrder as Serializable)
-            orderSummaryScreenFragment.arguments = bundle
-            replaceFragment(
-                orderSummaryScreenFragment,
-                OrderSummaryScreenFragment::class.java.simpleName,
-                true
-            )
+            if (productsToBeOrder.isNotEmpty()) {
+                val orderSummaryScreenFragment = OrderSummaryScreenFragment()
+                val bundle = Bundle()
+                bundle.putSerializable(
+                    Constants.ORDER_SUMMARY_KEY,
+                    productsToBeOrder as Serializable
+                )
+                orderSummaryScreenFragment.arguments = bundle
+                replaceFragment(
+                    orderSummaryScreenFragment,
+                    OrderSummaryScreenFragment::class.java.simpleName,
+                    true
+                )
+            }else{
+                Snackbar.make(binding.root,"Please select item to proceed", Snackbar.LENGTH_LONG).show()
+            }
         }
         return binding.root
     }

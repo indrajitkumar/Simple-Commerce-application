@@ -14,13 +14,13 @@ class SuccessDialog(context: Context) : AlertDialog.Builder(context) {
             formattedString
         )
             .setCancelable(false)
-            .setNegativeButton("Dismiss") { dialog, id ->
+            .setNegativeButton(context.getText(R.string.ok)) { dialog, id ->
                 dialog.cancel()
                 dialogListener?.onDialogDismiss()
             }
 
         val alert = dialogBuilder.create()
-        alert.setTitle("Congratulation")
+        alert.setTitle(context.getText(R.string.congratulation))
         alert.show()
     }
 

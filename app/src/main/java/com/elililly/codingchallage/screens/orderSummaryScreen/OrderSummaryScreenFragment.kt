@@ -80,11 +80,10 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
 
     private fun fetchOrderResponse() {
         var mFlow: Flow<String?>
-        _viewModel.mDataStoreManager.observe(viewLifecycleOwner) {
+        _viewModel.mDataStoreManager.observe(viewLifecycleOwner) { it ->
             mFlow = it
             CoroutineScope(Dispatchers.Main).launch {
                 mFlow.collect {
-                    println("Inder Coolect String $it")
                     fetchOrder = it
                     binding.progressBarContainer.visibility = View.VISIBLE
                     showDialog(successDialog, fetchOrder?.fromJson<OrderSubmit>())

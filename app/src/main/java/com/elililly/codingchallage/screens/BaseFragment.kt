@@ -10,7 +10,7 @@ abstract class BaseFragment : Fragment() {
         if (activity?.isFinishing == false) {
 
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.add(id, newFragment, newFragmentTag)
+            transaction?.replace(id, newFragment, newFragmentTag)
             if (isReplaceWithBackStack) {
                 transaction?.addToBackStack(newFragmentTag)
             }

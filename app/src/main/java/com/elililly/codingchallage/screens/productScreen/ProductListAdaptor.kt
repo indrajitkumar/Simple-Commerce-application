@@ -10,14 +10,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elililly.codingchallage.R
+import com.elililly.codingchallage.getImageFromDrawable
 import com.elililly.codingchallage.models.Product
 
 
 internal class ProductListAdaptor(private var productList: List<Product>) :
     RecyclerView.Adapter<ProductListAdaptor.MyViewHolder>(), ProductSummaryListner {
-    val productListService: ProductListService = ProductListService()
-
-    var orderedProduts = mutableListOf<Product>()
+    private val productListService: ProductListService = ProductListService()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -28,27 +27,23 @@ internal class ProductListAdaptor(private var productList: List<Product>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val product = productList[position]
         holder.productName.text = product.code
-        val resId: Int = holder.itemView.context.resources.getIdentifier(
-            product.url,
-            "drawable",
-            holder.itemView.context.getPackageName()
-        )
-        val image: Drawable = holder.itemView.context.resources.getDrawable(resId, null)
+
+        val image: Drawable = getImageFromDrawable(holder.itemView.context!!, product.url)
+
         holder.productImage.setImageDrawable(image)
         holder.productPrice.text = product.price.value.toString()
         holder.quantity.text = "0"
 
-        holder.plusProduct.setOnClickListener(View.OnClickListener {
+        holder.plusProduct.setOnClickListener {
             val addProduct = productListService.addProduct(product)
-            holder.quantity.text = addProduct.get(product).toString()
-            Log.d("Inder", "Add product : " + addProduct)
+            holder.quantity.text = addProduct[product].toString()
 
-        })
-        holder.minusproduct.setOnClickListener(View.OnClickListener {
+        }
+        holder.minusproduct.setOnClickListener {
             val minusProduct = productListService.minusProduct(product)
-            Log.d("Inder", "Minus product : " + minusProduct)
-            holder.quantity.text = minusProduct.get(product).toString()
-        })
+            if (minusProduct?.get(product) == null) holder.quantity.text = "0"
+            else holder.quantity.text = minusProduct[product]?.toString()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -60,14 +55,16 @@ internal class ProductListAdaptor(private var productList: List<Product>) :
         var productImage: ImageView = view.findViewById(R.id.productImage)
         var productName: TextView = view.findViewById(R.id.productName)
         var productPrice: TextView = view.findViewById(R.id.productPrice)
-        var plusProduct: Button = view.findViewById(R.id.plus)
+        var plusProduct: ImageView = view.findViewById(R.id.plus)
         var quantity: TextView = view.findViewById(R.id.quantity)
-        var minusproduct: Button = view.findViewById(R.id.minus)
+        var minusproduct: ImageView = view.findViewById(R.id.minus)
 
     }
 
     override fun getToBeOrderedProducts(): Map<Product, Int> {
-        return productListService.getProductList()
+        val productList = productListService.getProductList()
+        productList.values.removeAll{it == 0}
+        return productList
     }
 
 }
