@@ -1,12 +1,60 @@
-//package com.elililly.codingchallage.viewmodels
-//
-//import androidx.lifecycle.LiveData
-//import androidx.lifecycle.MutableLiveData
-//import androidx.lifecycle.ViewModel
-//import com.elililly.codingchallage.models.Address
-//
-//class OrderSummaryViewModel: ViewModel {
-//    private val _address = MutableLiveData<Address>()
-//    val user: LiveData<Address> = _address
-//
-//}
+package com.elililly.codingchallage.viewmodels
+
+import android.app.Application
+import android.content.Context
+import android.util.Log
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import com.elililly.codingchallage.DataStoreManager
+import com.elililly.codingchallage.fromJson
+import com.elililly.codingchallage.getJsonDataFromAsset
+import com.elililly.codingchallage.models.OrderSubmit
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+class OrderSummaryViewModel(internal val application: Application) : AndroidViewModel(application) {
+    var mOrderSubmit: MutableLiveData<OrderSubmit> = MutableLiveData<OrderSubmit>()
+    var mDataStoreManager: MutableLiveData<Flow<String?>> = MutableLiveData<Flow<String?>>()
+    private val Context.dataStore by preferencesDataStore("app_preferences")
+
+    companion object {
+        val SUBMIT_ORDER = stringPreferencesKey("SUBMIT_ORDER")
+    }
+
+    private suspend fun storeSubmitOrder(saveSubmitOrder: String) {
+        application.dataStore.edit { prefs ->
+            prefs[SUBMIT_ORDER] = saveSubmitOrder
+        }
+    }
+
+    private val getSubmitOrderResponse: Flow<String?>
+        get() = application.dataStore.data.map {
+            it[SUBMIT_ORDER] ?: ""
+        }
+    private fun setOrderSubmit(orderSubmit: OrderSubmit) {
+        mOrderSubmit.postValue(orderSubmit)
+    }
+
+    private fun getOrderSubmitResponse() {
+        val jsonFileString = getJsonDataFromAsset(application.applicationContext, "OrderDone.json")
+        Log.i("data", jsonFileString!!)
+        setOrderSubmit(jsonFileString.fromJson())
+    }
+
+    suspend fun storeLocally(storeData: String) {
+        storeSubmitOrder(storeData)
+        mDataStoreManager.postValue(getFromStorage())
+    }
+
+    private fun getFromStorage() = getSubmitOrderResponse
+
+
+    init {
+        getOrderSubmitResponse()
+    }
+
+
+}

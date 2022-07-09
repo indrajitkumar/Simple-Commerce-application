@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Address(
-    var address: String,
-    var name: String,
-    var phone: String
+    var address: String? = null,
+    var name: String? = null,
+    var phone: String? = null
 ): Parcelable

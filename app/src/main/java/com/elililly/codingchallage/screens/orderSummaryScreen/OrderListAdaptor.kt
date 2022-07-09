@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elililly.codingchallage.R
+import com.elililly.codingchallage.getImageFromDrawable
 import com.elililly.codingchallage.models.Product
 
 class OrderListAdaptor(private var orderList: Map<Product, Int>) :
@@ -26,12 +27,8 @@ class OrderListAdaptor(private var orderList: Map<Product, Int>) :
         list = ArrayList(orderList.keys)
         val product = list[position]
         holder.productName.text = product.code
-        val resId: Int = holder.itemView.context.resources.getIdentifier(
-            product.url,
-            "drawable",
-            holder.itemView.context.getPackageName()
-        )
-        val image: Drawable = holder.itemView.context.resources.getDrawable(resId, null)
+        val image: Drawable = getImageFromDrawable(holder.itemView.context!!, product.url)
+
         holder.productImage.setImageDrawable(image)
         holder.productPrice.text = product.price.value.toString()
         holder.quantity.text = orderList.getValue(product).toString()

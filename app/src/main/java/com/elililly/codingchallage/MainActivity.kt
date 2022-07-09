@@ -12,11 +12,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.fl_mainFragmentContainer,
-                ProductScreenFragment(), ProductScreenFragment::class.java.getSimpleName()
+                ProductScreenFragment(), ProductScreenFragment::class.java.simpleName
             ).addToBackStack(null).commitAllowingStateLoss()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 }

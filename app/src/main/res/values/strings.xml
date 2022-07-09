@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">CodingChallage</string>
+    <string name="app_name">CodingChallenge</string>
     <string name="phone">Phone</string>
     <string name="address">Address</string>
     <string name="name">Name</string>
+    <string name="errorName">"Enter Your Name"</string>
+    <string name="errorAddress">"Enter Your Address"</string>
+    <string name="errorPhone">"Enter Your Phone"</string>
+    <string name="successOrderMsg">"Thank you %s, Your order has been successfully placed with order id: %s by %s"</string>
 </resources>
