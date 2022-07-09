@@ -12,13 +12,17 @@ import com.elililly.codingchallage.DataStoreManager
 import com.elililly.codingchallage.fromJson
 import com.elililly.codingchallage.getJsonDataFromAsset
 import com.elililly.codingchallage.models.OrderSubmit
+import com.elililly.codingchallage.models.Price
+import com.elililly.codingchallage.models.Product
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+
+private val Context.dataStore by preferencesDataStore("app_preferences")
 
 class OrderSummaryViewModel(internal val application: Application) : AndroidViewModel(application) {
     var mOrderSubmit: MutableLiveData<OrderSubmit> = MutableLiveData<OrderSubmit>()
     var mDataStoreManager: MutableLiveData<Flow<String?>> = MutableLiveData<Flow<String?>>()
-    private val Context.dataStore by preferencesDataStore("app_preferences")
+    var totalPrice: MutableLiveData<String> = MutableLiveData<String>()
 
     companion object {
         val SUBMIT_ORDER = stringPreferencesKey("SUBMIT_ORDER")
@@ -51,6 +55,16 @@ class OrderSummaryViewModel(internal val application: Application) : AndroidView
 
     private fun getFromStorage() = getSubmitOrderResponse
 
+    fun totalPrice(productsToBeOrder: Map<Product, Int>){
+        totalPrice.postValue(getTotalPrice(productsToBeOrder))
+    }
+    private fun getTotalPrice(productsToBeOrder: Map<Product, Int>):String {
+        var total = 0.0
+        for ((k,v) in productsToBeOrder){
+            total += (k.price.value * v)
+        }
+        return total.toString()
+    }
 
     init {
         getOrderSubmitResponse()

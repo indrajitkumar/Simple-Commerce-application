@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elililly.codingchallage.*
 import com.elililly.codingchallage.databinding.OrdersummaryFragmentBinding
@@ -17,6 +18,7 @@ import com.elililly.codingchallage.utils.Constants
 import com.elililly.codingchallage.viewmodels.OrderSummaryViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.observeOn
 
 class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
     private lateinit var orderListAdaptor: OrderListAdaptor
@@ -25,8 +27,8 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
     private var mContext: Context? = null
     private lateinit var _viewModel: OrderSummaryViewModel
     lateinit var mOrderSubmit: OrderSubmit
-    var fetchOrder: String? = null
-    lateinit var successDialog: SuccessDialog
+    private var fetchOrder: String? = null
+    private lateinit var successDialog: SuccessDialog
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
@@ -51,11 +53,15 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
             val layoutManager = LinearLayoutManager(mContext)
             binding.selectedProducts.layoutManager = layoutManager
             binding.selectedProducts.adapter = orderListAdaptor
+            _viewModel.totalPrice(productsToBeOrder)
+            _viewModel.totalPrice.observe(viewLifecycleOwner) {
+                binding.totalPrice.text = it
+            }
         }
         successDialog = SuccessDialog(mContext!!)
         successDialog.setDialogListener(this)
 
-        binding.orderSummaryBtn.setOnClickListener(View.OnClickListener {
+        binding.orderSummaryBtn.setOnClickListener {
 
             if (binding.name.text!!.isBlank()) {
                 binding.name.error = getString(R.string.errorName)
@@ -70,10 +76,10 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
                 }
                 fetchOrderResponse()
             }
-        })
+        }
         return binding.root
     }
-
+    
     private suspend fun storeOrder() {
         _viewModel.storeLocally(mOrderSubmit.json())
     }
@@ -119,4 +125,6 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
         val fm: FragmentManager? = activity?.supportFragmentManager
         fm?.popBackStack()
     }
+
+
 }
