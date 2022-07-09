@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/CommerceApplication/app/src/main/res/drawable/ic_add.xml" value="0.202" />
         <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/CommerceApplication/app/src/main/res/drawable/ic_remove.xml" value="0.202" />
+        <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/CommerceApplication/app/src/main/res/layout/odered_product_list_item.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/CommerceApplication/app/src/main/res/layout/ordersummary_fragment.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/CommerceApplication/app/src/main/res/layout/product_list_item.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/310164421/AndroidStudioProjects/CodingChallage/app/src/main/res/layout/activity_main.xml" value="0.1" />

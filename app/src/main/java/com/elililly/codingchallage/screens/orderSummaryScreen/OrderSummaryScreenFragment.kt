@@ -55,7 +55,7 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
             binding.selectedProducts.adapter = orderListAdaptor
             _viewModel.totalPrice(productsToBeOrder)
             _viewModel.totalPrice.observe(viewLifecycleOwner) {
-                binding.totalPrice.text = it
+                binding.totalPrice.text = String.format("Rs.$it")
             }
         }
         successDialog = SuccessDialog(mContext!!)
@@ -73,29 +73,21 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
                 CoroutineScope(Dispatchers.Main).launch {
                     getUserInfo()
                     storeOrder()
+                    _viewModel.mDataStoreManager.observe(viewLifecycleOwner) {
+                        it.asLiveData().observe(viewLifecycleOwner) {
+                            fetchOrder = it
+                            binding.progressBarContainer.visibility = View.VISIBLE
+                            showDialog(successDialog, fetchOrder?.fromJson())
+                        }
+                    }
                 }
-                fetchOrderResponse()
             }
         }
         return binding.root
     }
-    
+
     private suspend fun storeOrder() {
         _viewModel.storeLocally(mOrderSubmit.json())
-    }
-
-    private fun fetchOrderResponse() {
-        var mFlow: Flow<String?>
-        _viewModel.mDataStoreManager.observe(viewLifecycleOwner) { it ->
-            mFlow = it
-            CoroutineScope(Dispatchers.Main).launch {
-                mFlow.collect {
-                    fetchOrder = it
-                    binding.progressBarContainer.visibility = View.VISIBLE
-                    showDialog(successDialog, fetchOrder?.fromJson<OrderSubmit>())
-                }
-            }
-        }
     }
 
     private fun showDialog(

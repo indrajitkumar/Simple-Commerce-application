@@ -10,4 +10,6 @@
     <string name="congratulation">Congratulation</string>
     <string name="successOrderMsg">"Thank you %s, Your order has been successfully placed with order id: %s by %s"</string>
     <string name="submitOrder">Submit Order</string>
+    <string name="total_price">Total Price </string>
+    <string name="total_tax_price">(Inclusive all taxes)</string>
 </resources>
