@@ -1,0 +1,160 @@
+{
+  "products": [
+    {
+      "code": "HX903364",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 29.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat1"
+    },
+    {
+      "code": "HX902364",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 29.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat2"
+    },
+    {
+      "code": "HX604294",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 21.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat3"
+    },
+    {
+      "code": "HX900364",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 38.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat4"
+    },
+    {
+      "code": "HX8332/11",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 89.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie1"
+    },
+    {
+      "code": "HX9043/64",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 38.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie2"
+    },
+    {
+      "code": "HX606264",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 29.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie3"
+    },
+    {
+      "code": "DIS251/01",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 4.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie4"
+    },
+    {
+      "code": "HX9042/64",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 29.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt1"
+    },
+    {
+      "code": "HX6063/64",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 38.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt2"
+    },
+    {
+      "code": "DIS364/03",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 9.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt3"
+    },
+    {
+      "code": "DIS359/03",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 14.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt4"
+    },
+    {
+      "code": "HX6032/94",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 21.99
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt5"
+    }
+  ]
+}

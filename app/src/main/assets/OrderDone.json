@@ -1,0 +1,14 @@
+{
+  "data": {
+    "type": "OrderSubmitResponse",
+    "attributes": {
+      "orderId": "",
+      "address": {
+        "name": "",
+        "address": "",
+        "phone": ""
+      },
+      "paymentMethod": "COD"
+    }
+  }
+}

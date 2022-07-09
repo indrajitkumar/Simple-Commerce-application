@@ -1,0 +1,14 @@
+{
+  "stores": [
+    {
+      "name": "Avenue",
+      "rating": "4",
+      "url": "hoodieimage"
+    },
+    {
+      "name": "Avenue",
+      "rating": "4",
+      "url": "shirtimage"
+    }
+  ]
+}
