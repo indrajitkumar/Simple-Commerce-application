@@ -1,11 +1,11 @@
 {
   "products": [
     {
-      "code": "HX903364",
+      "code": "Black Round Cap",
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 29.99
+        "value": 299
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -13,11 +13,11 @@
       "url": "hat1"
     },
     {
-      "code": "HX902364",
+      "code": "Black Adidas Cap",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 29.99
+        "value": 199
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -25,11 +25,11 @@
       "url": "hat2"
     },
     {
-      "code": "HX604294",
+      "code": "White Adidas Cap",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 21.99
+        "value": 210
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -37,11 +37,11 @@
       "url": "hat3"
     },
     {
-      "code": "HX900364",
+      "code": "Black Funky Cap",
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 38.99
+        "value": 389
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -49,11 +49,11 @@
       "url": "hat4"
     },
     {
-      "code": "HX8332/11",
+      "code": "Black Hoodie",
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 89.99
+        "value": 1899
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -61,11 +61,11 @@
       "url": "hoodie1"
     },
     {
-      "code": "HX9043/64",
+      "code": "Red Hoodie",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 38.99
+        "value": 1215
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -73,11 +73,11 @@
       "url": "hoodie2"
     },
     {
-      "code": "HX606264",
+      "code": "Grey hoodie",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 29.99
+        "value": 1999
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -85,11 +85,11 @@
       "url": "hoodie3"
     },
     {
-      "code": "DIS251/01",
+      "code": "Black long Hoodie",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 4.99
+        "value": 1999
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -97,11 +97,11 @@
       "url": "hoodie4"
     },
     {
-      "code": "HX9042/64",
+      "code": "Black T-Shirt",
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 29.99
+        "value": 299
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -109,11 +109,11 @@
       "url": "shirt1"
     },
     {
-      "code": "HX6063/64",
+      "code": "White T-Shirt",
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 38.99
+        "value": 199
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -121,11 +121,11 @@
       "url": "shirt2"
     },
     {
-      "code": "DIS364/03",
+      "code": "Red T-Shirt",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 9.99
+        "value": 399
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -133,11 +133,11 @@
       "url": "shirt3"
     },
     {
-      "code": "DIS359/03",
+      "code": "Grey T-Shirt",
       "price": {
         "currencyIso": "Rs",
         "discount": 5,
-        "value": 14.99
+        "value": 499
       },
       "stock": {
         "stockLevelStatus": "inStock"
@@ -149,7 +149,7 @@
       "price": {
         "currencyIso": "Rs",
         "discount": 10,
-        "value": 21.99
+        "value": 269
       },
       "stock": {
         "stockLevelStatus": "inStock"

@@ -59,7 +59,7 @@ class OrderSummaryViewModel(internal val application: Application) : AndroidView
     private fun getTotalPrice(productsToBeOrder: Map<Product, Int>):String {
         var total = 0.0
         for ((k,v) in productsToBeOrder){
-            total += (k.price.value * v)
+            total += (k.price.value.toFloat() * v)
         }
         return total.toString()
     }

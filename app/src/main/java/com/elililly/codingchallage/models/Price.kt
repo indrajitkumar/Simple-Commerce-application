@@ -6,6 +6,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Price(
     val currencyIso: String,
-    val discount: Int,
-    val value: Double
+    val discount: String,
+    val value: String
 ):Parcelable

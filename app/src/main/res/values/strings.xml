@@ -12,4 +12,6 @@
     <string name="submitOrder">Submit Order</string>
     <string name="total_price">Total Price </string>
     <string name="total_tax_price">(Inclusive all taxes)</string>
+    <string name="_0">0</string>
+    <string name="checkout">Checkout</string>
 </resources>
