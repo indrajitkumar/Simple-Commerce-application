@@ -1,0 +1,160 @@
+{
+  "products": [
+    {
+      "code": "Black Round Cap",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 299
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat1"
+    },
+    {
+      "code": "Black Adidas Cap",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 199
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat2"
+    },
+    {
+      "code": "White Adidas Cap",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 210
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat3"
+    },
+    {
+      "code": "Black Funky Cap",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 389
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hat4"
+    },
+    {
+      "code": "Black Hoodie",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 1899
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie1"
+    },
+    {
+      "code": "Red Hoodie",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 1215
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie2"
+    },
+    {
+      "code": "Grey hoodie",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 1999
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie3"
+    },
+    {
+      "code": "Black long Hoodie",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 1999
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "hoodie4"
+    },
+    {
+      "code": "Black T-Shirt",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 299
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt1"
+    },
+    {
+      "code": "White T-Shirt",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 199
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt2"
+    },
+    {
+      "code": "Red T-Shirt",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 399
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt3"
+    },
+    {
+      "code": "Grey T-Shirt",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 5,
+        "value": 499
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt4"
+    },
+    {
+      "code": "HX6032/94",
+      "price": {
+        "currencyIso": "Rs",
+        "discount": 10,
+        "value": 269
+      },
+      "stock": {
+        "stockLevelStatus": "inStock"
+      },
+      "url": "shirt5"
+    }
+  ]
+}

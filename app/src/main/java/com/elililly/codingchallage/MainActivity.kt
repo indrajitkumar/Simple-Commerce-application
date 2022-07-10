@@ -15,4 +15,13 @@ class MainActivity : AppCompatActivity() {
                 ProductScreenFragment(), ProductScreenFragment::class.java.simpleName
             ).addToBackStack(null).commitAllowingStateLoss()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val fragmentManager = supportFragmentManager
+        val currentFrag = fragmentManager.findFragmentById(R.id.fl_mainFragmentContainer)
+        if (fragmentManager.backStackEntryCount == 0){
+            finish()
+        }
+    }
 }
