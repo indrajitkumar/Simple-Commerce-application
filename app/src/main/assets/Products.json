@@ -8,7 +8,7 @@
         "value": 299
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hat1"
     },
@@ -20,7 +20,7 @@
         "value": 199
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hat2"
     },
@@ -32,7 +32,7 @@
         "value": 210
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hat3"
     },
@@ -44,7 +44,7 @@
         "value": 389
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hat4"
     },
@@ -56,7 +56,7 @@
         "value": 1899
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hoodie1"
     },
@@ -68,7 +68,7 @@
         "value": 1215
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hoodie2"
     },
@@ -80,7 +80,7 @@
         "value": 1999
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hoodie3"
     },
@@ -92,7 +92,7 @@
         "value": 1999
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "hoodie4"
     },
@@ -104,7 +104,7 @@
         "value": 299
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "shirt1"
     },
@@ -116,7 +116,7 @@
         "value": 199
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "shirt2"
     },
@@ -128,7 +128,7 @@
         "value": 399
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "shirt3"
     },
@@ -140,7 +140,7 @@
         "value": 499
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "shirt4"
     },
@@ -152,7 +152,7 @@
         "value": 269
       },
       "stock": {
-        "stockLevelStatus": "inStock"
+        "stockLevelStatus": "InStock"
       },
       "url": "shirt5"
     }

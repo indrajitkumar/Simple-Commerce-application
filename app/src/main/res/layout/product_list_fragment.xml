@@ -5,17 +5,51 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-
-    <ImageView
-        android:id="@+id/storeBanner"
+    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+        android:id="@+id/storeBanner1"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="160dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/storeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bannertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp" />
+
+            <RatingBar
+                android:id="@+id/bannerRate"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:numStars="5"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </com.google.android.material.circularreveal.CircularRevealFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsListView"
@@ -25,13 +59,13 @@
         android:divider="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/storeBanner" />
+        app:layout_constraintTop_toBottomOf="@+id/storeBanner1" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/orderSummaryBtn"

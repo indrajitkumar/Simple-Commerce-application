@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="8dp"
                     android:text='@{ product.code ?? ""}'
                     android:textSize="18sp" />
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:textSize="18sp"
@@ -77,11 +77,24 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:textSize="18sp"
                     app:discount='@{ product?? ""}' />
+
+                <TextView
+                    android:id="@+id/stockstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:text='@{ product.stock.stockLevelStatus}' />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

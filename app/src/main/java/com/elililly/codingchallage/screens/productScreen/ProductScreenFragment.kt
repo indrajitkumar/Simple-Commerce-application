@@ -51,9 +51,10 @@ class ProductScreenFragment : BaseFragment() {
                 it.stores[0].url
             )
             binding.storeBanner.setImageDrawable(image)
+            binding.bannertext.text = it.stores[0].name
+            binding.bannerRate.rating = it.stores[0].rating.toFloat()
         })
         binding = ProductListFragmentBinding.inflate(inflater, container, false)
-
         binding.orderSummaryBtn.setOnClickListener {
             val productsToBeOrder = productListAdaptor.getToBeOrderedProducts()
             if (productsToBeOrder.isNotEmpty()) {
@@ -69,8 +70,9 @@ class ProductScreenFragment : BaseFragment() {
                     OrderSummaryScreenFragment::class.java.simpleName,
                     true
                 )
-            }else{
-                Snackbar.make(binding.root,"Please select item to proceed", Snackbar.LENGTH_LONG).show()
+            } else {
+                Snackbar.make(binding.root, "Please select item to proceed", Snackbar.LENGTH_LONG)
+                    .show()
             }
         }
         return binding.root
