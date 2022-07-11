@@ -1,11 +1,9 @@
-package com.elililly.codingchallage
+package com.elililly.codingchallage.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import com.google.gson.Gson
 import java.io.IOException
 

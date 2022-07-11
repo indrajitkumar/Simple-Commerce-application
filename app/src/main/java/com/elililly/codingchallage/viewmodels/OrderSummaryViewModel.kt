@@ -8,8 +8,8 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.elililly.codingchallage.fromJson
-import com.elililly.codingchallage.getJsonDataFromAsset
+import com.elililly.codingchallage.utils.fromJson
+import com.elililly.codingchallage.utils.getJsonDataFromAsset
 import com.elililly.codingchallage.models.OrderSubmit
 import com.elililly.codingchallage.models.Product
 import kotlinx.coroutines.flow.Flow
@@ -36,6 +36,7 @@ class OrderSummaryViewModel(internal val application: Application) : AndroidView
         get() = application.dataStore.data.map {
             it[SUBMIT_ORDER] ?: ""
         }
+
     private fun setOrderSubmit(orderSubmit: OrderSubmit) {
         mOrderSubmit.postValue(orderSubmit)
     }
@@ -53,12 +54,13 @@ class OrderSummaryViewModel(internal val application: Application) : AndroidView
 
     private fun getFromStorage() = getSubmitOrderResponse
 
-    fun totalPrice(productsToBeOrder: Map<Product, Int>){
+    fun totalPrice(productsToBeOrder: Map<Product, Int>) {
         totalPrice.postValue(getTotalPrice(productsToBeOrder))
     }
-    private fun getTotalPrice(productsToBeOrder: Map<Product, Int>):String {
+
+    private fun getTotalPrice(productsToBeOrder: Map<Product, Int>): String {
         var total = 0.0
-        for ((k,v) in productsToBeOrder){
+        for ((k, v) in productsToBeOrder) {
             total += (k.price.value.toFloat() * v)
         }
         return total.toString()

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
@@ -15,11 +14,9 @@ import com.elililly.codingchallage.databinding.OrdersummaryFragmentBinding
 import com.elililly.codingchallage.models.OrderSubmit
 import com.elililly.codingchallage.models.Product
 import com.elililly.codingchallage.screens.BaseFragment
-import com.elililly.codingchallage.utils.Constants
+import com.elililly.codingchallage.utils.*
 import com.elililly.codingchallage.viewmodels.OrderSummaryViewModel
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.observeOn
 
 class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
     private lateinit var orderListAdaptor: OrderListAdaptor
@@ -118,6 +115,4 @@ class OrderSummaryScreenFragment : BaseFragment(), DialogListner {
         val fm: FragmentManager? = activity?.supportFragmentManager
         fm?.popBackStack()
     }
-
-
 }

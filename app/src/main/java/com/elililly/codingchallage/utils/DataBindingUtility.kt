@@ -1,14 +1,12 @@
 package com.elililly.codingchallage.utils
 
 import android.annotation.SuppressLint
-import android.graphics.Paint
 import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.elililly.codingchallage.getImageFromDrawable
 import com.elililly.codingchallage.models.Product
 
 class DataBindingUtility {

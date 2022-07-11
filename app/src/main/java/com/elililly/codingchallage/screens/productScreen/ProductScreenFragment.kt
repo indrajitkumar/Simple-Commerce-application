@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toast.makeText
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elililly.codingchallage.databinding.ProductListFragmentBinding
-import com.elililly.codingchallage.getImageFromDrawable
-import com.elililly.codingchallage.models.Products
+import com.elililly.codingchallage.utils.getImageFromDrawable
 import com.elililly.codingchallage.screens.BaseFragment
 import com.elililly.codingchallage.screens.orderSummaryScreen.OrderSummaryScreenFragment
 import com.elililly.codingchallage.utils.Constants
@@ -38,7 +35,8 @@ class ProductScreenFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _viewModel = ViewModelProvider(this)[ProductScreenViewModel::class.java]
+        _viewModel = ViewModelProvider(this)[
+                ProductScreenViewModel::class.java]
 
         _viewModel.mProducts.observe(viewLifecycleOwner, Observer {
             productListAdaptor =
