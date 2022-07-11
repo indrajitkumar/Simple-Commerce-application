@@ -1,6 +1,6 @@
 # Simple-Commerce-application
 
-A)	 Simple Commerce application
+A)	 Simple Commerce application to showcase implementation of Clean Architecture and use of MVVM pattern with DataBinding principles.
  
 You will be creating a simple commerce  application which allows user to view the store details and products, add products to the basket, and place an order. You will be using mock jSON API to perform all the requests. 
  
@@ -9,9 +9,8 @@ Following jSon files needs to create and accessed:
 •	StoreInfo
 •	Products
 •	OrderDone
- 
- 
-The application should consists of three screens:
+
+The application consists of three screens:
  
 1. Store details & products screen:
 •	Fetch the store detail from /storeInfo endpoint and display them in the upper part of the screen.
@@ -19,8 +18,6 @@ The application should consists of three screens:
 •	Add an ability for the user to select product(s).
 •	Skills Challenge: It is your choice on how you'd like to build this feature and the skills you'd like to demonstrate to us. You could allow:
 •	Multiple quantity (e.g. + and - button on each product) and multiple products selection
-•	Multiple products selection (e.g. checkboxes), but only a single quantity for each product
-•	Only one product selection
 •	Add a button at the bottom most of the screen to bring the user to the order summary screen.
 2. Order summary screen:
 •	Display the product(s) selected.
