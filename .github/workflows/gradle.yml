@@ -38,8 +38,18 @@ jobs:
           echo 'Running build'
           ./gradlew --refresh-dependencies --full-stacktrace clean assembleRelease \
            :app:testReleaseUnitTest
-
-
+      - name: Upload APK's
+        if: startsWith(github.ref, 'refs/heads/release/app_')
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: APK's
+          path: |
+            ${{github.workspace}}/app/build/outputs/apk/release/*.apk
+      - name: Lint
+        shell: bash
+        run: |
+          ./gradlew  \
+           :app:lint
 #name: Android CI
 #
 #on:
