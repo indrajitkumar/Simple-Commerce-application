@@ -49,21 +49,21 @@ jobs:
       #          ./gradlew -Dorg.gradle.parallel=false reportAllProjectDependencies | gzip -9 > ./allProjects.gradledependencies.gz
       #          curl -L -u $USERNAME:$PASSWORD -X PUT "${dependenciesName}" -T ./allProjects.gradledependencies.gz
       #
-      - name: Upload APK's
-        if: startsWith(github.ref, 'refs/heads/release/platform_')
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: APK's
-          path: |
-            ${{github.workspace}}/app/build/outputs/apk/release/*.apk
+#      - name: Upload APK's
+#        if: startsWith(github.ref, 'refs/heads/release/platform_')
+#        uses: actions/upload-artifact@v3.1.0
+#        with:
+#          name: APK's
+#          path: |
+#            ${{github.workspace}}/app/build/outputs/apk/release/*.apk
 
-      - name: Upload Dependencies.lock file
-        if: startsWith(github.ref, 'refs/heads/release/platform_')
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: dependencies.lock
-          path: |
-            ${{github.workspace}}/app/*dependencies*.lock
+#      - name: Upload Dependencies.lock file
+#        if: startsWith(github.ref, 'refs/heads/release/platform_')
+#        uses: actions/upload-artifact@v3.1.0
+#        with:
+#          name: dependencies.lock
+#          path: |
+#            ${{github.workspace}}/app/*dependencies*.lock
 
       #    - name: Jacoco Reports
       #      shell: bash
@@ -95,15 +95,15 @@ jobs:
           ls ${{github.workspace}}/APK/*
           ls ${{github.workspace}}/APK/app/build/outputs/apk/release/
 
-      - name: App Center Deploy
-        uses: wzieba/AppCenter-Github-Action@v1.3.3
-        with:
-          appName: EMS-Team/mobile-plf-android
-          token: ${{secrets.APP_CENTER_TOKEN}}
-          # Distribution group
-          group: UDI
-          # Artefact to upload (.apk)
-          file: APK/app/build/outputs/apk/release/app-release.apk
-          # If true, send an email notification to the distribution group
-          notifyTesters: true
-          debug: true
+#      - name: App Center Deploy
+#        uses: wzieba/AppCenter-Github-Action@v1.3.3
+#        with:
+#          appName: EMS-Team/mobile-plf-android
+#          token: ${{secrets.APP_CENTER_TOKEN}}
+#          # Distribution group
+#          group: UDI
+#          # Artefact to upload (.apk)
+#          file: APK/app/build/outputs/apk/release/app-release.apk
+#          # If true, send an email notification to the distribution group
+#          notifyTesters: true
+#          debug: true
