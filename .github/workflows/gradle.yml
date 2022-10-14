@@ -45,7 +45,7 @@ jobs:
 #          USERNAME: ${{ secrets.FUNCTIONAL_ACCOUNT_CODE1_ID }}
 #          PASSWORD: ${{ secrets.ARTIFACTORY_API_KEY }}
         run: |
-            ./gradlew --full-stacktrace saveResDep saveAllResolvedDependenciesGradleFormat zipDocuments artifactoryPublish :app:printArtifactoryApkPath 
+            ./gradlew --full-stacktrace artifactoryPublish :app:printArtifactoryApkPath 
             apkname=`xargs < apkname.txt`
             dependenciesName=${apkname/.apk/.gradledependencies.gz}
             ./gradlew -Dorg.gradle.parallel=false reportAllProjectDependencies | gzip -9 > ./allProjects.gradledependencies.gz
