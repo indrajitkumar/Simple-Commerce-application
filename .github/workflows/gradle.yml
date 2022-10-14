@@ -38,25 +38,34 @@ jobs:
           echo 'Running build'
           ./gradlew --refresh-dependencies --full-stacktrace clean assembleRelease \
            :app:testReleaseUnitTest
-      - name: Publish To Artifactory
-        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/develop')
-        shell: bash
-#        env:
-#          USERNAME: ${{ secrets.FUNCTIONAL_ACCOUNT_CODE1_ID }}
-#          PASSWORD: ${{ secrets.ARTIFACTORY_API_KEY }}
-        run: |
-            ./gradlew --full-stacktrace artifactoryPublish :app:printArtifactoryApkPath 
-            apkname=`xargs < apkname.txt`
-            dependenciesName=${apkname/.apk/.gradledependencies.gz}
-            ./gradlew -Dorg.gradle.parallel=false reportAllProjectDependencies | gzip -9 > ./allProjects.gradledependencies.gz
-#            curl -L -u $USERNAME:$PASSWORD -X PUT "${dependenciesName}" -T ./allProjects.gradledependencies.gz
-      - name: Upload APK's
-        if: startsWith(github.ref, 'refs/heads/release/app_')
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: APK's
-          path: |
-            ${{github.workspace}}/app/build/outputs/apk/release/*.apk
+      - name: Make Gradle executable
+          run: chmod +x ./gradlew
+      - name: Build Release APK
+          run: ./gradlew assembleRelease
+      - name: Releasing using Hub
+        uses: kyze8439690/action-release-releaseapk@master
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            APP_FOLDER: app
+#      - name: Publish To Artifactory
+#        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/develop')
+#        shell: bash
+##        env:
+##          USERNAME: ${{ secrets.FUNCTIONAL_ACCOUNT_CODE1_ID }}
+##          PASSWORD: ${{ secrets.ARTIFACTORY_API_KEY }}
+#        run: |
+#            ./gradlew --full-stacktrace artifactoryPublish :app:printArtifactoryApkPath
+#            apkname=`xargs < apkname.txt`
+#            dependenciesName=${apkname/.apk/.gradledependencies.gz}
+#            ./gradlew -Dorg.gradle.parallel=false reportAllProjectDependencies | gzip -9 > ./allProjects.gradledependencies.gz
+##            curl -L -u $USERNAME:$PASSWORD -X PUT "${dependenciesName}" -T ./allProjects.gradledependencies.gz
+#      - name: Upload APK's
+#        if: startsWith(github.ref, 'refs/heads/release/app_')
+#        uses: actions/upload-artifact@v3.1.0
+#        with:
+#          name: APK's
+#          path: |
+#            ${{github.workspace}}/app/build/outputs/apk/release/*.apk
       - name: Lint
         shell: bash
         run: |
