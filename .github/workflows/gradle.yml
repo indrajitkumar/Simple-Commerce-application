@@ -38,6 +38,18 @@ jobs:
           echo 'Running build'
           ./gradlew --refresh-dependencies --full-stacktrace clean assembleRelease \
            :app:testReleaseUnitTest
+      - name: Publish To Artifactory
+        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/develop'))
+        shell: bash
+#        env:
+#          USERNAME: ${{ secrets.FUNCTIONAL_ACCOUNT_CODE1_ID }}
+#          PASSWORD: ${{ secrets.ARTIFACTORY_API_KEY }}
+        run: |
+            ./gradlew --full-stacktrace saveResDep saveAllResolvedDependenciesGradleFormat zipDocuments artifactoryPublish :app:printArtifactoryApkPath 
+            apkname=`xargs < apkname.txt`
+            dependenciesName=${apkname/.apk/.gradledependencies.gz}
+            ./gradlew -Dorg.gradle.parallel=false reportAllProjectDependencies | gzip -9 > ./allProjects.gradledependencies.gz
+#            curl -L -u $USERNAME:$PASSWORD -X PUT "${dependenciesName}" -T ./allProjects.gradledependencies.gz
       - name: Upload APK's
         if: startsWith(github.ref, 'refs/heads/release/app_')
         uses: actions/upload-artifact@v3.1.0
