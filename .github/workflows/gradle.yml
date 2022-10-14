@@ -38,11 +38,6 @@ jobs:
           echo 'Running build'
           ./gradlew --refresh-dependencies --full-stacktrace clean assembleRelease \
            :app:testReleaseUnitTest
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          APP_FOLDER: app
 #      - name: Publish To Artifactory
 #        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/develop')
 #        shell: bash
@@ -67,6 +62,11 @@ jobs:
         run: |
           ./gradlew  \
            :app:lint
+      - name: Build & Publish Debug APK
+        uses: actions/action-release-debugapk@0.0.7
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            APP_FOLDER: app
 #name: Android CI
 #
 #on:
