@@ -23,10 +23,10 @@ jobs:
           submodules: true
           lfs: true
 
-      - name: Set env
-        run: |
-          echo "EPOCH_TIME=$(date +%s)" >> $GITHUB_ENV
-          echo $EPOCH_TIME
+#      - name: Set env
+#        run: |
+#          echo "EPOCH_TIME=$(date +%s)" >> $GITHUB_ENV
+#          echo $EPOCH_TIME
 
       - name: Build & Test with Gradle
         shell: bash
