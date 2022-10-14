@@ -7,8 +7,8 @@ on:
       - '**'
 
   #Set your workflow to run every day of the week at 16:00 UTC(9:30 PM)
-  schedule:
-    - cron:  0 16 * * 0-6
+  ##schedule:
+   ## - cron:  0 16 * * 0-6
 
 jobs:
   Build:
